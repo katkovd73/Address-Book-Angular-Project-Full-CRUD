@@ -1,0 +1,40 @@
+<div id="mainContent">
+    <h1>New Contact</h1>
+
+    <div id="contactCard">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="myform">
+            <mat-card>
+                <mat-card-content>
+                    <div class="myInputs">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>First Name</mat-label>
+                            <input matInput formControlName="firstName">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput formControlName="lastName">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput formControlName="phoneNumber">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="address">
+                        </mat-form-field>
+                    </div>
+                </mat-card-content>
+
+                <mat-card-actions align="end">
+                    <button class="actionButtons" (click)="onCancel()" type="button" mat-raised-button
+                        color="warn">Cancel</button>
+                    <button class="actionButtons" [disabled]="contactForm.invalid" type="submit" mat-raised-button
+                        color="primary">Create</button>
+                </mat-card-actions>
+            </mat-card>
+        </form>
+    </div>
+</div>
